@@ -14,7 +14,6 @@ app.review(how_many=number_of_reviews)
 sia = SentimentIntensityAnalyzer()
 compound_running_score = 0
 
-
 for review_metadata in app.reviews:
 	raw_review = review_metadata["review"]
 	compound_running_score += sia.polarity_scores(raw_review)["compound"] # the sentiment analyzer returns pos, neg, neutral and compound values. We use the compound for our analysis.
@@ -23,5 +22,5 @@ for review_metadata in app.reviews:
 avg_score = compound_running_score / number_of_reviews
 
 # print the results to standard output
-print("Compount sentiment score: %f" % (avg_score))
+print("Compound sentiment score: %f" % (avg_score))
 
